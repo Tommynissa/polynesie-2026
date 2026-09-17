@@ -20,6 +20,143 @@ const guides = [
   {id:'24',dow:'Samedi',island:'Retour',title:'Retour de Thomas',lede:'Départ avant l’aube pour l’aéroport de Papeete, vol Air France vers Paris puis correspondance pour Nice le dimanche 25 octobre.',timeline:[['Vers 04:45','Départ de l’hôtel','Taxi vers l’aéroport.'],['07:40','AF0029 Papeete → Paris','Escale technique à Los Angeles.'],['25/10 15:45','Arrivée à Paris-CDG','Correspondance de 2 h 25.'],['18:10','AF7314 Paris → Nice','Départ du Terminal 2F.'],['19:45','Arrivée à Nice T2','Fin du voyage de Thomas.']],facts:[['Transport','Taxi + Air France'],['Bagage','23 kg en soute'],['Correspondance','2 h 25 à CDG'],['Anaïs','Retour le 2 novembre']],tips:['Vérifier l’ouverture de l’enregistrement et l’heure exacte du taxi la veille.','Garder les justificatifs et documents pour l’escale américaine en cabine.','Le retour d’Anaïs est prévu le 2 novembre à 8 h 50, arrivée à Nice le 3 novembre à 19 h 45.'],places:[['Aéroport de Tahiti-Faa’a','Départ à 7 h 40','Tahiti Faa a International Airport'],['Paris Charles-de-Gaulle','Correspondance vers Nice','Paris CDG Terminal 2F'],['Aéroport Nice Côte d’Azur','Arrivée Terminal 2','Nice Airport Terminal 2']]}
 ];
 
+const stepExtras = {
+  '06':[
+    'L’enregistrement long-courrier et le contrôle des documents peuvent prendre du temps : mieux vaut être au terminal environ deux heures avant.',
+    'Les bagages doivent normalement suivre jusqu’à Papeete, mais demandez confirmation au comptoir de Nice avant de les déposer.',
+    'Le changement 2F vers 2E est balisé dans l’aéroport ; marchez directement vers la porte dès l’arrivée à Paris.',
+    'L’escale américaine reste un transit soumis aux formalités d’entrée des États-Unis : gardez le passeport et les justificatifs accessibles.'
+  ],
+  '07':[
+    'Après le passage de la police et la récupération des valises, profitez de l’aéroport pour retirer quelques francs Pacifique si nécessaire.',
+    'Donnez au chauffeur le nom exact de la compagnie de ferry choisie afin d’être déposé au bon comptoir.',
+    'Les bagages sont rangés dans une zone dédiée du navire ; gardez avec vous papiers, téléphone et objets fragiles.',
+    'Évitez de charger cette première journée : décalage horaire, chaleur et nuit en avion peuvent fortement fatiguer.'
+  ],
+  '08':[
+    'Faites le plein et téléchargez les points de la journée avant de quitter le logement.',
+    'L’arrêt est court mais la lumière du matin est idéale pour photographier le lagon et Tahiti au loin.',
+    'Entrez progressivement dans l’eau et repérez le courant avant de partir avec masque et tuba.',
+    'Choisissez un repas assez léger pour garder du temps et de l’énergie pour la suite de la boucle.',
+    'L’accès peut traverser un terrain privé : demandez toujours l’autorisation et prévoyez une petite contribution.'
+  ],
+  '09':[
+    'Arrivez quinze à vingt minutes avant le départ pour l’équipement, les consignes et le règlement éventuel.',
+    'La sortie peut être mouvementée : petit-déjeuner léger et traitement contre le mal de mer si vous y êtes sensible.',
+    'Privilégiez un établissement proche de la plage pour limiter les déplacements après la sortie.',
+    'Les zones peu profondes conviennent mieux à une reprise tranquille après plusieurs heures en bateau.',
+    'La côte nord-ouest offre généralement les meilleurs dégagements pour regarder le soleil descendre sur le lagon.'
+  ],
+  '10':[
+    'Partez avec une marge suffisante : il faut débarquer, prendre un taxi et rejoindre l’aéroport de Tahiti.',
+    'La présentation à l’aéroport est conseillée vers 9 h 20 ; gardez le poids des bagages à 15 kg par personne.',
+    'Le petit aérodrome permet une sortie rapide ; contactez l’hôte dès que les bagages sont récupérés.',
+    'Photographiez l’état du scooter, vérifiez freins, pneus, antivol, casques et niveau de carburant avant de partir.',
+    'Profitez de l’installation pour confirmer avec la pension les itinéraires, l’accès à Hana Iti et la restitution du scooter.'
+  ],
+  '11':[
+    'Partez avec le plein, de l’eau et la photo d’accès à Hana Iti enregistrée sur le téléphone.',
+    'Le belvédère se prête à un arrêt rapide ; restez bien garés hors de la chaussée.',
+    'Le panorama demande peu d’effort et permet de repérer la côte que vous suivrez ensuite vers Parea.',
+    'Le repas traditionnel est servi à heure fixe : arrivez un peu avant 11 h et prévoyez des espèces pour les boissons.',
+    'Le chemin n’est pas toujours évident ; ne forcez pas un passage privé et demandez confirmation aux habitants.',
+    'Évitez de rouler après la tombée de la nuit, certaines portions de route étant peu éclairées.'
+  ],
+  '12':[
+    'La route jusqu’à Parea est agréable mais assez longue : prévoyez une marge pour arriver sans stress.',
+    'L’atelier comprend la préparation, la mise en couleur et les explications sur les motifs traditionnels.',
+    'Restez dans le sud de l’île afin de revenir facilement dès que les tissus sont suffisamment secs.',
+    'Manipulez les paréos avec les mains propres et demandez la meilleure manière de les plier pour le transport.',
+    'Rangez-les séparément dans les bagages jusqu’à ce que les couleurs soient parfaitement stabilisées.'
+  ],
+  '13':[
+    'Vérifiez la météo avant de partir : la randonnée est moins agréable et plus glissante après la pluie.',
+    'Montez à votre rythme jusqu’au premier point de vue ; faites demi-tour dès que les passages deviennent trop techniques.',
+    'Cet arrêt complète la vue de la randonnée sans demander d’effort supplémentaire.',
+    'Profitez du secteur pour manger, vous baigner et récupérer avant la visite culturelle.',
+    'Respectez le caractère sacré du lieu : restez sur les cheminements et ne déplacez aucune pierre.',
+    'Terminez la journée par le carburant, la préparation des bagages et la confirmation de la restitution du scooter.'
+  ],
+  '14':[
+    'Regroupez les affaires fragiles et prévoyez un petit sac séparé pour la longue traversée.',
+    'Faites constater le niveau de carburant et l’état du véhicule lors de la remise des clés.',
+    'Repérez le bateau, confirmez l’enregistrement et gardez billets et pièces d’identité à portée de main.',
+    'Installez-vous à l’ombre si possible et gardez eau, encas et protection contre le mal de mer avec vous.',
+    'Gladys doit connaître l’horaire exact ; prévenez-la rapidement en cas de retard annoncé.',
+    'La demi-pension comprend le dîner : profitez de ce premier repas pour confirmer les activités des jours suivants.'
+  ],
+  '15':[
+    'Prenez un petit-déjeuner suffisant mais léger et soyez prêts quelques minutes avant l’heure annoncée.',
+    'L’observation n’est jamais garantie ; suivez les instructions du guide et gardez une distance respectueuse.',
+    'Les chaussons d’eau protègent les pieds, mais veillez surtout à ne pas toucher ni casser le corail.',
+    'Le repas est inclus : signalez à l’avance toute allergie ou contrainte alimentaire.',
+    'Le courant peut être plus marqué près de la passe ; restez dans la zone indiquée par l’équipage.',
+    'Rincez masque, tuba et vêtements à l’eau douce dès le retour pour éviter le sel et le sable.'
+  ],
+  '16':[
+    'Demandez un panier ou un système de fixation si vous transportez serviettes, eau et matériel de plage.',
+    'Le matin, la plage est généralement plus calme et la lumière met en valeur les couleurs du lagon.',
+    'Arrêtez-vous uniquement dans un emplacement sûr pour ne pas gêner la circulation sur la petite route.',
+    'Profitez du village pour acheter de l’eau, retirer de l’argent si le distributeur fonctionne et déjeuner.',
+    'Demandez les horaires avant de vous déplacer, car les petites structures peuvent fermer sans préavis.',
+    'Rendez les vélos avant la nuit et signalez immédiatement tout problème mécanique rencontré.'
+  ],
+  '17':[
+    'Un départ matinal réduit l’exposition au soleil et laisse une marge avant le déjeuner réservé.',
+    'Demandez à Gladys un repère précis du départ afin de ne pas perdre de temps dans Vaiea.',
+    'Utilisez les cordes uniquement comme aide, gardez trois points d’appui et ne dépassez pas votre niveau de confort.',
+    'Prévoyez du temps pour redescendre prudemment : la descente peut être plus délicate que la montée.',
+    'Confirmez l’heure du service chez Phirmin ; si la randonnée dure plus longtemps, prévenez la pension.'
+  ],
+  '18':[
+    'À l’arrivée, demandez aux habitués où se trouve le passage le moins profond et à quelle heure revenir.',
+    'Le niveau peut dépasser la taille par endroits : renoncez si le courant, le vent ou la visibilité sont mauvais.',
+    'Les plats peuvent partir rapidement ; se présenter dès 11 h augmente les chances d’avoir tout le choix.',
+    'Gardez une fin de journée souple pour vous adapter à la marée et récupérer avant le départ du lendemain.'
+  ],
+  '19':[
+    'Réglez le solde de la pension et vérifiez que rien n’a été oublié avant de libérer la chambre.',
+    'Le trajet vers l’aéroport comprend une navette maritime : suivez exactement l’horaire donné par Gladys.',
+    'Conservez les objets fragiles en cabine et respectez la limite de 15 kg pour le bagage enregistré.',
+    'À l’arrivée, rejoignez rapidement le taxi ou le moyen de transfert prévu vers la gare maritime.',
+    'Si le dernier ferry est manqué, utilisez directement le plan B à Tahiti plutôt que d’attendre au port.'
+  ],
+  '20':[
+    'Prévoyez eau, maillot et chaussures faciles à enlever pour alterner visites et baignade.',
+    'Utilisez les espaces d’arrêt prévus : la route est étroite autour de la baie.',
+    'La route monte dans la vallée ; conduisez doucement et surveillez les véhicules venant en sens inverse.',
+    'Vérifiez les horaires de la boutique avant la montée pour ne pas trouver le point de vente fermé.',
+    'Les arbres offrent de l’ombre, mais gardez vos affaires près de vous pendant la baignade.'
+  ],
+  '21':[
+    'Regardez le vent et l’état du lagon avant de choisir entre Temae et Tiahura.',
+    'Demandez un gilet et les limites de navigation, même si le plan d’eau paraît calme.',
+    'Vérifiez si l’eau et le repas sont compris dans la formule choisie avant le départ.',
+    'Restez à distance des raies et tortues et évitez les zones de corail trop peu profondes.',
+    'Gardez une marge pour rendre le matériel avant la fermeture du loueur.'
+  ],
+  '22':[
+    'Commencez tôt pour monter avant la forte chaleur et éviter les groupes les plus nombreux.',
+    'La pente est importante : faites des pauses régulières et gardez de l’eau pour la descente.',
+    'Profitez du passage pour voir l’église octogonale et choisir un snack dans le village.',
+    'Alternez baignade et repos à l’ombre après l’effort du matin.',
+    'Repérez à l’avance un endroit sûr pour stationner avant le coucher de soleil.'
+  ],
+  '23':[
+    'Gardez cette matinée flexible pour les derniers achats et la préparation des deux programmes séparés.',
+    'Choisissez un déjeuner proche du logement ou du quai afin de ne pas retarder le ferry.',
+    'Thomas doit prendre une traversée suffisamment tôt pour absorber un éventuel retard.',
+    'Demandez la confirmation écrite du taxi du lendemain et préparez les bagages avant de dormir.'
+  ],
+  '24':[
+    'Soyez prêts avant l’arrivée du taxi : à cette heure, une solution de remplacement serait difficile à trouver.',
+    'Présentez-vous à l’enregistrement avec suffisamment d’avance et conservez les documents de transit en cabine.',
+    'Suivez les indications vers le Terminal 2F dès l’arrivée et vérifiez immédiatement la porte du vol pour Nice.',
+    'La marge permet normalement le transfert, mais évitez tout arrêt inutile dans le terminal.',
+    'À l’arrivée, vérifiez les bagages avant de quitter la zone de livraison et conservez les cartes d’embarquement.'
+  ]
+};
+
 const qs = new URLSearchParams(location.search);
 const id = qs.get('j') || '06';
 const currentIndex = guides.findIndex(day => day.id === id);
@@ -46,7 +183,7 @@ if(!day){
       <nav class="day-nav" aria-label="Journées précédente et suivante">${prev?`<a href="jour.html?j=${prev.id}">← ${prev.id} octobre</a>`:'<span></span>'}${next?`<a href="jour.html?j=${next.id}">${next.id} octobre →</a>`:'<span></span>'}</nav>
       <div class="detail-grid">
         <div>
-          <section class="detail-card"><p class="eyebrow">Au fil de la journée</p><h2>Programme détaillé</h2><ol class="schedule">${day.timeline.map(([time,title,text])=>`<li><time>${time}</time><div><b>${title}</b><p>${text}</p></div></li>`).join('')}</ol></section>
+          <section class="detail-card"><p class="eyebrow">Au fil de la journée</p><h2>Programme détaillé</h2><ol class="schedule">${day.timeline.map(([time,title,text],stepIndex)=>`<li><time>${time}</time><div><b>${title}</b><p>${text}</p><p class="step-extra"><strong>À savoir</strong>${stepExtras[day.id]?.[stepIndex] || 'Gardez cette étape flexible et adaptez-la aux conditions rencontrées sur place.'}</p></div></li>`).join('')}</ol></section>
           <section class="detail-card"><p class="eyebrow">Se repérer</p><h2>Carte et étapes</h2>${routeSvg(day.places)}<div class="map-links">${day.places.map((p,i)=>`<a target="_blank" rel="noopener" href="${mapsUrl(p[2])}">${i+1}. ${p[0]} ↗</a>`).join('')}</div>${day.photo?'<img class="photo-repere" src="acces-hana-iti.jpeg" alt="Photo satellite annotée de l’accès à la plage Hana Iti"><p class="muted">Photo-repère à conserver hors ligne pour l’accès à Hana Iti.</p>':''}</section>
         </div>
         <aside>

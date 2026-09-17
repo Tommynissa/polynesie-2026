@@ -25,6 +25,8 @@
 .schedule time { position:relative; z-index:1; align-self:start; padding:.35rem .45rem; color:var(--ocean); background:var(--lagoon-soft); border-radius:.45rem; text-align:center; font-size:.78rem; font-weight:700; }
 .schedule b { display:block; margin-bottom:.2rem; }
 .schedule p { margin:0; color:var(--muted); }
+.schedule .step-extra { margin-top:.65rem; padding:.65rem .75rem; color:#365b64; background:#f3faf9; border-left:3px solid var(--lagoon); border-radius:0 .5rem .5rem 0; font-size:.88rem; line-height:1.45; }
+.step-extra strong { display:block; margin-bottom:.15rem; color:var(--ocean-2); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; }
 .fact-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.6rem; }
 .fact { padding:.8rem; background:var(--paper-2); border-radius:.65rem; }
 .fact small,.fact b { display:block; }
