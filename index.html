@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#073b4c">
+  <meta name="description" content="Carnet de voyage de Thomas et Anaïs en Polynésie française, du 6 au 24 octobre 2026.">
+  <title>Polynésie 2026 · Thomas & Anaïs</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Retour au début">
+      <span class="brand-mark" aria-hidden="true">☼</span>
+      <span>Polynésie <b>2026</b></span>
+    </a>
+    <nav aria-label="Navigation principale">
+      <a href="#planning">Planning</a>
+      <a href="#reservations">Réservations</a>
+      <a href="#adresses">Adresses</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">06 → 24 octobre 2026</p>
+        <h1>Notre voyage<br><em>en Polynésie</em></h1>
+        <p class="hero-intro">Moorea, Huahine et Maupiti — toutes les étapes, horaires, bonnes adresses et cartes réunis au même endroit.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#planning">Voir le planning</a>
+          <a class="button ghost" href="#reservations">Infos pratiques</a>
+        </div>
+      </div>
+      <div class="route-card" aria-label="Résumé du voyage">
+        <div class="countdown"><span id="countdown-number">—</span><small id="countdown-label">avant le départ</small></div>
+        <div class="route-line">
+          <div><b>Nice</b><span>06 oct.</span></div>
+          <i></i>
+          <div><b>Moorea</b><span>07–10</span></div>
+          <i></i>
+          <div><b>Huahine</b><span>10–14</span></div>
+          <i></i>
+          <div><b>Maupiti</b><span>14–19</span></div>
+          <i></i>
+          <div><b>Moorea</b><span>19–23</span></div>
+        </div>
+        <p class="route-note">Retour de Thomas le 24 octobre · Anaïs le 2 novembre</p>
+      </div>
+    </section>
+
+    <section class="island-strip" aria-label="Séjours par île">
+      <button class="island active" data-filter="all"><span>Tout</span><b>19 jours</b></button>
+      <button class="island" data-filter="moorea"><span>Moorea</span><b>8 nuits</b></button>
+      <button class="island" data-filter="huahine"><span>Huahine</span><b>4 nuits</b></button>
+      <button class="island" data-filter="maupiti"><span>Maupiti</span><b>5 nuits</b></button>
+      <button class="island" data-filter="transport"><span>Transports</span><b>6 trajets</b></button>
+    </section>
+
+    <section class="section" id="planning">
+      <div class="section-heading">
+        <div><p class="eyebrow">Au jour le jour</p><h2>Le planning complet</h2></div>
+        <p>Départs prévus vers 8 h 30–9 h, sauf quand une réservation impose un horaire plus tôt.</p>
+      </div>
+      <div class="days" id="days"></div>
+    </section>
+
+    <section class="section info-section" id="reservations">
+      <div class="section-heading">
+        <div><p class="eyebrow">À garder sous la main</p><h2>Réservations & transports</h2></div>
+      </div>
+      <div class="booking-grid">
+        <article class="booking featured">
+          <span class="booking-icon">✈</span><div><small>Aller international · Air France</small><h3>Nice → Tahiti</h3><p>06/10 AF7313 · NCE 16:40 → CDG 18:15<br>06/10 AF0028 · CDG 19:30 → PPT 07/10 05:30<br><span class="muted">Escale technique de 2 h 15 à Los Angeles</span></p></div>
+        </article>
+        <article class="booking">
+          <span class="booking-icon">✈</span><div><small>Vol inter-îles · Air Tahiti</small><h3>Tahiti → Huahine</h3><p>10/10 · VT310<br>PPT 10:50 → HUH 11:30<br>Bagage : 15 kg/personne · Réf. IBKEN8</p></div>
+        </article>
+        <article class="booking">
+          <span class="booking-icon">≋</span><div><small>Bateau · aller simple</small><h3>Huahine → Maupiti</h3><p>14/10 · Quai de Fare 10:00<br>Port de Maupiti 14:55 · 7 000 F<br><span class="muted">Se présenter vers 9 h 15</span></p></div>
+        </article>
+        <article class="booking">
+          <span class="booking-icon">✈</span><div><small>Vol inter-îles · Air Tahiti</small><h3>Maupiti → Tahiti</h3><p>19/10 · VT734<br>MAU 15:35 → PPT 16:25<br>Bagage : 15 kg/personne</p></div>
+        </article>
+        <article class="booking">
+          <span class="booking-icon">✈</span><div><small>Retour Thomas · Air France</small><h3>Tahiti → Nice</h3><p>24/10 AF0029 · PPT 07:40 → CDG 25/10 15:45<br>AF7312 · CDG 17:15 → NCE 18:50<br><span class="muted">Nuit du 23 à prévoir à Tahiti</span></p></div>
+        </article>
+        <article class="booking">
+          <span class="booking-icon">✈</span><div><small>Retour Anaïs · Air France</small><h3>Tahiti → Nice</h3><p>02/11 AF0029 · PPT 08:50 → CDG 03/11 16:50<br>AF7314 · CDG 18:15 → NCE 19:45</p></div>
+        </article>
+      </div>
+      <div class="alert"><b>À confirmer avant le départ :</b> les horaires des ferries Tahiti ↔ Moorea, l’hébergement à Moorea, la nuit du 23 octobre à Tahiti et l’heure exacte de l’excursion lagon du 15 octobre.</div>
+    </section>
+
+    <section class="section" id="adresses">
+      <div class="section-heading">
+        <div><p class="eyebrow">Contacts utiles</p><h2>Adresses & téléphones</h2></div>
+        <p>Appuyer sur « Itinéraire » pour ouvrir le point dans Google Maps.</p>
+      </div>
+      <div class="address-grid" id="address-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>Thomas & Anaïs · Polynésie 2026</b><span>Un carnet pensé pour être consulté facilement sur téléphone.</span></div>
+    <a href="#top">Retour en haut ↑</a>
+  </footer>
+
+  <dialog id="photo-dialog">
+    <button class="dialog-close" aria-label="Fermer">×</button>
+    <h2>Accès à la plage Hana Iti</h2>
+    <img src="acces-hana-iti.jpeg" alt="Photo satellite annotée montrant l’accès à la plage Hana Iti">
+    <p>Conserver cette image hors ligne. L’accès local reste à confirmer auprès de la pension avant de partir.</p>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

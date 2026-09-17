@@ -1,0 +1,9 @@
+{
+  "name": "Polynésie 2026 · Thomas & Anaïs",
+  "short_name": "Polynésie 2026",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffefa",
+  "theme_color": "#073b4c",
+  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}
