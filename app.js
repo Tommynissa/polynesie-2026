@@ -59,43 +59,15 @@ function routeDiagram(stops) {
 }
 
 function dayCard(day, index) {
-  const stops = day.stops.map(([time,label])=>`<span class="stop"><time>${time}</time>${label}</span>`).join('');
-  const detailMap = day.map ? `<div class="map" data-map="${day.map}" data-index="${index}"><svg viewBox="0 0 520 280" aria-label="Carte de la journée"><rect class="water" width="520" height="280"/><text x="260" y="140" text-anchor="middle" fill="#52757b">Chargement de la carte…</text></svg><p class="map-caption">Tracé indicatif · ouvrir Google Maps pour naviguer</p></div>` : routeDiagram(day.route);
-  const meta = dayMeta[index];
-  return `<article class="day" data-island="${day.island}">
+  return `<a class="day home-day" data-island="${day.island}" href="jour.html?j=${day.date}" aria-label="Voir le programme du ${day.date} octobre">
     <div class="day-date"><span>${day.dow}</span><b>${day.date}</b><span>oct.</span></div>
     <div class="day-body">
-      <div class="day-top"><div><h3>${day.title}</h3><p class="day-summary">${day.summary}</p></div><span class="tag">${day.tag}</span></div>
-      <div class="timeline">${stops}</div>
-      <div class="day-actions"><button class="details-toggle" aria-expanded="false">Détails & carte</button>${day.photo?'<button class="mini-button photo">Photo accès Hana Iti</button>':''}</div>
-      <div class="day-details"><div class="day-guide"><h4>Conseils du jour</h4><ul class="notes">${day.notes.map(n=>`<li>${n}</li>`).join('')}</ul><div class="meta-grid"><span><small>Rythme</small><b>${meta[0]}</b></span><span><small>Déplacements</small><b>${meta[1]}</b></span><span><small>Repas</small><b>${meta[2]}</b></span><span><small>À anticiper</small><b>${meta[3]}</b></span></div></div>${detailMap}</div>
+      <h3>${day.title}</h3><p class="day-summary">${day.summary}</p><span class="home-day-link">Ouvrir la journée <b>→</b></span>
     </div>
-  </article>`;
+  </a>`;
 }
 
 daysEl.innerHTML = days.map(dayCard).join('');
-
-document.querySelectorAll('.details-toggle').forEach(button => button.addEventListener('click', () => {
-  const day = button.closest('.day');
-  const open = day.classList.toggle('open');
-  button.setAttribute('aria-expanded', open);
-  button.textContent = open ? 'Réduire' : 'Détails & carte';
-  if (open) drawPendingMaps(day);
-}));
-
-document.querySelectorAll('.island').forEach(button => button.addEventListener('click', () => {
-  document.querySelectorAll('.island').forEach(b=>b.classList.remove('active'));
-  button.classList.add('active');
-  const filter = button.dataset.filter;
-  document.querySelectorAll('.day').forEach(card=>card.hidden = filter !== 'all' && card.dataset.island !== filter);
-}));
-
-const dialog = document.querySelector('#photo-dialog');
-document.querySelectorAll('.mini-button.photo').forEach(button=>button.addEventListener('click',()=>dialog.showModal()));
-dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
-dialog.addEventListener('click',event=>{ if(event.target===dialog) dialog.close(); });
-
-document.querySelector('#address-grid').innerHTML = addresses.map(a=>`<article class="address"><small>${a.island}</small><h3>${a.name}</h3><p>${a.text}</p><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.q)}">Itinéraire ↗</a></article>`).join('');
 
 const start = new Date('2026-10-06T16:40:00+02:00');
 const end = new Date('2026-10-24T07:40:00-10:00');
