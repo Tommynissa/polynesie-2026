@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#073b4c">
+  <meta name="theme-color" content="#eef7f8">
   <meta name="description" content="Guide jour par jour du voyage de Thomas et Anaïs en Polynésie française, du 6 au 24 octobre 2026.">
   <title>Polynésie 2026 · Guide jour par jour</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Retour au début"><span class="brand-mark" aria-hidden="true">☼</span><span>Polynésie <b>2026</b></span></a>
-    <nav aria-label="Navigation principale"><a href="#planning">Les 19 journées</a></nav>
+    <nav aria-label="Navigation principale"><a href="#planning">Journées</a><a href="materiel.html">Réglages vidéo</a></nav>
   </header>
   <main id="top">
     <section class="hero home-hero">
@@ -24,7 +21,7 @@
         <p class="eyebrow">Carnet de route · 06 → 24 octobre 2026</p>
         <h1>Le voyage<br><em>jour après jour</em></h1>
         <p class="hero-intro">Choisissez une date pour retrouver le programme complet, les horaires, les conseils, les restaurants, les contacts et les cartes utiles.</p>
-        <div class="hero-actions"><a class="button primary" href="#planning">Choisir une journée</a></div>
+        <div class="hero-actions"><a class="button primary" href="#planning">Choisir une journée</a><a class="button secondary" href="materiel.html">Préparer les caméras</a></div>
       </div>
       <div class="route-card" aria-label="Résumé du voyage">
         <p class="route-kicker">3 îles · 19 jours · 2 voyageurs</p>
@@ -45,6 +42,22 @@
         <p>Chaque date ouvre une page dédiée avec toutes les informations pratiques.</p>
       </div>
       <div class="days home-days" id="days"></div>
+    </section>
+    <section class="capture-section" id="capture">
+      <div class="section-heading">
+        <div><p class="eyebrow">Capturer le voyage</p><h2>Vos réglages prêts à filmer</h2></div>
+        <p>Deux fiches simples à consulter sur place, selon la lumière et l’activité.</p>
+      </div>
+      <div class="capture-grid">
+        <a class="device-card" href="materiel.html#neo2">
+          <span class="device-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M10 13h12M16 10v12M7 9l5 5M25 9l-5 5M7 23l5-5M25 23l-5-5" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="16" r="4" stroke-width="2"/><circle cx="6" cy="8" r="3" stroke-width="2"/><circle cx="26" cy="8" r="3" stroke-width="2"/><circle cx="6" cy="24" r="3" stroke-width="2"/><circle cx="26" cy="24" r="3" stroke-width="2"/></svg></span>
+          <small>Drone</small><h3>DJI Neo 2</h3><p>Lagon, bateau, coucher de soleil et ralenti : cinq configurations rapides avec les bons filtres ND.</p><span class="device-link">Voir les réglages →</span>
+        </a>
+        <a class="device-card osmo" href="materiel.html#osmo">
+          <span class="device-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="5" y="6" width="22" height="20" rx="6" stroke-width="2"/><circle cx="16" cy="16" r="6" stroke-width="2"/><circle cx="16" cy="16" r="2" stroke-width="2"/><path d="M23 10h.01" stroke-width="3" stroke-linecap="round"/></svg></span>
+          <small>Caméra d’action</small><h3>Osmo Action 6</h3><p>Toujours en 4K Custom : cinq profils prêts pour la journée, le snorkeling, le bateau et le sunset.</p><span class="device-link">Voir les réglages →</span>
+        </a>
+      </div>
     </section>
   </main>
   <footer>
